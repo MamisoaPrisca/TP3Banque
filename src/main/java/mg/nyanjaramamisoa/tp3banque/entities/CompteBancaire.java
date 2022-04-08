@@ -9,12 +9,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 /**
  *
  * @author nyamp
  */
 @Entity
+@Table(name = "comptebancaire")
+@NamedQueries({
+    @NamedQuery(name = "Customer.findAll", query = "SELECT c FROM CompteBancaire c")
+})
 public class CompteBancaire implements Serializable {
 
     private static final long serialVersionUID = 1L;
